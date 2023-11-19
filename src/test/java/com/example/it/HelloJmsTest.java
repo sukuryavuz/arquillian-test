@@ -6,18 +6,17 @@ import jakarta.jms.*;
 import jms.HelloSender;
 import jms.JmsResources;
 import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit5.ArquillianExtension;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.logging.Logger;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@ExtendWith(ArquillianExtension.class)
+@RunWith(Arquillian.class)
 public class HelloJmsTest {
     private final static Logger LOGGER = Logger.getLogger(HelloJmsTest.class.getName());
     
@@ -47,6 +46,7 @@ public class HelloJmsTest {
         assertTrue(message instanceof TextMessage);
         String text = message.getBody(String.class);
         LOGGER.info("message text:" + text);
+        LOGGER.info("++++++++++++++ DAS FUNKTIONIERT");
         assertTrue(text.startsWith("Hello JMS"));
         consumer.close();
     }

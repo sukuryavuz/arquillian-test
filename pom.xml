@@ -107,11 +107,10 @@
                 <type>pom</type>
             </dependency>
             <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -122,8 +121,8 @@
             <artifactId>jakarta.jakartaee-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jboss.arquillian.junit5</groupId>
-            <artifactId>arquillian-junit5-container</artifactId>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
         </dependency>
         <!-- see: https://github.com/arquillian/arquillian-core/issues/248 -->
@@ -139,8 +138,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
