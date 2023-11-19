@@ -46,6 +46,7 @@ public class HelloJmsTest {
         assertTrue(message instanceof TextMessage);
         String text = message.getBody(String.class);
         LOGGER.info("message text:" + text);
+        LOGGER.info("jmsContext: " + jmsContext);
         LOGGER.info("++++++++++++++ DAS FUNKTIONIERT");
         assertTrue(text.startsWith("Hello JMS"));
         consumer.close();
